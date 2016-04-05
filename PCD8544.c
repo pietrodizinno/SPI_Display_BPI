@@ -417,8 +417,8 @@ void LCDInit(uint8_t SCLK, uint8_t DIN, uint8_t DC, uint8_t CS, uint8_t RST, uin
 
 	LCDcommand((0x20|0x06));
 
-	SetByte(0x81);
-	SetByte(33);
+	LCDcommand(0x81);
+	LCDcommand(33);
 
 	LCDcommand(0x40);
 
