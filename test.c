@@ -23,7 +23,7 @@ Lesser General Public License for more details.
 #include "PCD8544.h"
 
 // pin setup
-int _din = 13
+int _din = 13;
 int _sclk = 12;
 int _dc = 16;
 int _rst = 14;
