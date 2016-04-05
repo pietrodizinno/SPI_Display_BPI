@@ -30,7 +30,7 @@ int _rst = 14;
 int _cs = 15;
 
 // lcd contrast
-int contrast = 33;
+int contrast = 14;
 
 int main (void)
 {
