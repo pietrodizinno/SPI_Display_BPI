@@ -23,14 +23,14 @@ Lesser General Public License for more details.
 #include "PCD8544.h"
 
 // pin setup
-int _din = 1;
-int _sclk = 0;
-int _dc = 2;
-int _rst = 4;
-int _cs = 3;
+int _din = 13
+int _sclk = 12;
+int _dc = 16;
+int _rst = 14;
+int _cs = 15;
 
 // lcd contrast
-int contrast = 50;
+int contrast = 33;
 
 int main (void)
 {
@@ -58,11 +58,6 @@ int main (void)
 
   // turn all the pixels on (a handy test)
   printf("Test: All pixels on.\n");
-  LCDcommand(PCD8544_DISPLAYCONTROL | PCD8544_DISPLAYALLON);
-  delay(1000);
-  // back to normal
-  printf("Test: All pixels off.\n");
-  LCDcommand(PCD8544_DISPLAYCONTROL | PCD8544_DISPLAYNORMAL);
   LCDclear();
 
   // display logo
