@@ -395,36 +395,51 @@ void LCDInit(uint8_t SCLK, uint8_t DIN, uint8_t DC, uint8_t CS, uint8_t RST, uin
 
 	// get into the EXTENDED mode!
 	LCDcommand(__RESET);
-
+	_delay_ms(1);
 	// LCD bias select (4 is optimal?)
 	LCDcommand(__CLEAR_BIAS);
+	_delay_ms(1);
 
 	LCDcommand(__SET_ADC);
+	_delay_ms(1);
 
 	LCDcommand(__CLEAR_SHL);
+	_delay_ms(1);
 
 	LCDcommand(0x40);
+	_delay_ms(1);
 
 	LCDcommand(__CLEAR_BIAS);
+	_delay_ms(1);
 
 	LCDcommand(0x2F);
+	_delay_ms(1);
 
 	LCDcommand(0x81);
+	_delay_ms(1);
 
 	LCDcommand(0x08);
+	_delay_ms(1);
 
 	LCDcommand((0x28|0x07));
+	_delay_ms(1);
 
 	LCDcommand((0x20|0x06));
+	_delay_ms(1);
 
 	LCDcommand(0x81);
-	LCDcommand(33);
+	_delay_ms(1);
+	LCDcommand(contrast);
+	_delay_ms(1);
 
 	LCDcommand(0x40);
+	_delay_ms(1);
 
 	LCDcommand(__DISPLAY_ON);
+	_delay_ms(1);
 
 	updateBoundingBox(0, 0, LCDWIDTH-1, LCDHEIGHT-1);
+	_delay_ms(1);
 
 }
 
